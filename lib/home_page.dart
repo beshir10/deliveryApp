@@ -56,11 +56,11 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,
+                  Text('العتاصر',style: TextStyle(fontWeight: FontWeight.bold,
                       fontSize: 20),),
                   Spacer(),
                   InkWell(
-                      child: Text('View All',
+                      child: Text('الال',
                       style: TextStyle(color: Theme.of(context).primaryColor,),
                       ),
                     onTap: (){},
