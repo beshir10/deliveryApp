@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dele/Widget/categories.dart';
-import 'package:dele/home_search.dart';
-import 'package:dele/resturants.dart';
+import 'package:dele/Widget/home_search.dart';
+import 'package:dele/Widget/resturants.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,14 +19,16 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Theme.of(context).dialogBackgroundColor,
 
       body:SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(height: 10,),
             HomeSearch(),
+
             SizedBox(height: 10,),
             CarouselSlider(
 
               options: CarouselOptions(height: 200.0,
+              reverse: true,
               autoPlayInterval: Duration(seconds: 10),
               autoPlay: true,),
 
@@ -51,20 +53,23 @@ class _HomePageState extends State<HomePage> {
                 );
               }).toList(),
             ),
+
+
             SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Text('العتاصر',style: TextStyle(fontWeight: FontWeight.bold,
-                      fontSize: 20),),
-                  Spacer(),
                   InkWell(
-                      child: Text('الال',
+                    child: Text('الكل',
                       style: TextStyle(color: Theme.of(context).primaryColor,),
-                      ),
+                    ),
                     onTap: (){},
                   ),
+                  Spacer(),
+                  Text('العناصر',style: TextStyle(fontWeight: FontWeight.bold,
+                      fontSize: 20),),
+
 
 
                 ],
@@ -75,6 +80,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 110,
               child: ListView(
+                reverse: true,
                 scrollDirection: Axis.horizontal,
                 children: [
                   Categories(photo: 'Images/Categories/burger.png'),
@@ -94,15 +100,16 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Text('Popular Resturants',style: TextStyle(fontWeight: FontWeight.bold,
-                  fontSize: 20),),
-                  Spacer(),
                   InkWell(
                     child: Text('View All',
                       style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                     onTap: (){},
                   ),
+                  Spacer(),
+                  Text('Popular Resturants',style: TextStyle(fontWeight: FontWeight.bold,
+                      fontSize: 20),),
+
 
 
                 ],
@@ -110,75 +117,33 @@ class _HomePageState extends State<HomePage> {
             ),
 
             SizedBox(
-              height: 200,
+              height: 250,
               child: ListView(
+                reverse: true,
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(6),
-                    width: 270,
-                    decoration: BoxDecoration(
-
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      borderRadius: BorderRadius.circular(25),
-                      image: DecorationImage(image: AssetImage('Images/Restaurants/gril99.png'),
-                          fit: BoxFit.fill
-                      ),
-                      border: Border(
-                        top: BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        right:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        left:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        bottom:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-
-                      ),
-
-                    ),                  ),
-                  Container(
-                    margin: EdgeInsets.all(6),
-                    width: 270,
-                    decoration: BoxDecoration(
-
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      borderRadius: BorderRadius.circular(25),
-                      image: DecorationImage(image: AssetImage('Images/Restaurants/topOrganic.png'),
-                          fit: BoxFit.fill
-                      ),
-                      border: Border(
-                        top: BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        right:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        left:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        bottom:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-
-                      ),
-
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(6),
-                    width: 270,
-                    decoration: BoxDecoration(
-
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      borderRadius: BorderRadius.circular(25),
-                      image: DecorationImage(image: AssetImage('Images/Restaurants/gril99.png'),
-                          fit: BoxFit.fill
-                      ),
-                      border: Border(
-                        top: BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        right:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        left:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-                        bottom:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
-
-                      ),
-
-                    ),                  ),
-
+                 Resturants(photo: 'Images/Restaurants/gril99.png'),
+                  Resturants(photo: 'Images/Restaurants/topOrganic.png'),
+                  Resturants(photo: 'Images/Restaurants/restaurant.png'),
 
                 ],
 
               ),
             ),
+            SizedBox(
+              height: 300,
+              child: ListView(
+                reverse: true,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Resturants(photo: 'Images/Restaurants/gril99.png'),
+                  Resturants(photo: 'Images/Restaurants/topOrganic.png'),
+                  Resturants(photo: 'Images/Restaurants/restaurant.png'),
 
+                ],
+
+              ),
+            ),
           ],
         ),
       )

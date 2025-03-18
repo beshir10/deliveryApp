@@ -1,4 +1,5 @@
-import 'package:dele/home_page.dart';
+import 'package:dele/page_view/basket_page.dart';
+import 'package:dele/page_view/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 
@@ -13,7 +14,8 @@ class _BnbState extends State<Bnb> {
   int selectedindex = 0;
 
   List<Widget> Bottompages = [
-    HomePage()
+    BasketPage(),
+    HomePage(),
 
   ];
 
@@ -22,17 +24,42 @@ class _BnbState extends State<Bnb> {
     // const controller=Bnb();
     return Scaffold(
       extendBody: true,
-
       appBar: AppBar(
+
+        actions: [Image.asset('Images/Categories/Wasili.logo.png',
+          height: 140,
+          width: 100,
+          fit: BoxFit.fill,
+        ),],
+        leading:
+        InkWell(
+          child:
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.location_on_outlined,
+              size: 40,
+              color: Theme.of(context).primaryColor,),
+              
+              SizedBox(width: 5,),
+              
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                Text('Al-Kadhimiya'),
+                SizedBox(height: 5,),
+                Text('Al-Nuab,Street')
+              ],)
+          
+            ],
+          ),
+          onTap: (){},
+        ),
+        leadingWidth: MediaQuery.of(context).size.width/1.6,
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Padding(
-          padding: const EdgeInsets.all(127),
-          child: Image.asset(
-            'Images/Categories/Wasili.logo.png',
-            fit: BoxFit.contain,
-          ),
-        ),
+        automaticallyImplyLeading: true,
+        scrolledUnderElevation: 0,
 
       ),
 

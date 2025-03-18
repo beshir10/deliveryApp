@@ -24,6 +24,14 @@ class Categories extends StatelessWidget {
         bottom:  BorderSide(width: 3,color: Theme.of(context).primaryColor),
         
       ),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 5,
+            offset: Offset(3, 3),
+          )
+
+        ]
 
     ),
     );

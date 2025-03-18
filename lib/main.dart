@@ -1,5 +1,5 @@
 import 'package:dele/bnb.dart';
-import 'package:dele/pasket.dart';
+import 'package:dele/page_view/basket_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
