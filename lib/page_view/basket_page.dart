@@ -1,4 +1,6 @@
+import 'package:dele/bnb.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BasketPage extends StatefulWidget {
   const BasketPage({super.key});
@@ -15,13 +17,13 @@ class _BasketPageState extends State<BasketPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Padding(
-          padding: const EdgeInsets.only(right: 0, left: 300),
-          child: Text(
-            "طلباتك",
-            style: TextStyle(fontSize: 25, color: Colors.black87),
-          ),
-        ),
+        // title: Padding(
+        //   padding: const EdgeInsets.only(right: 0, left: 300),
+        //   child: Text(
+        //     "طلباتك",
+        //     style: TextStyle(fontSize: 25, color: Colors.black87),
+        //   ),
+        // ),
       ),
       body: Center(
         child: Column(
@@ -55,7 +57,8 @@ class _BasketPageState extends State<BasketPage> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Add your onPressed code here!
+
+                Get.to(Bnb());
               },
               child: Text('أطلب الآن'),
               style: ElevatedButton.styleFrom(

@@ -1,5 +1,8 @@
+import 'package:dele/Widget/home_search.dart';
 import 'package:dele/page_view/basket_page.dart';
 import 'package:dele/page_view/home_page.dart';
+import 'package:dele/page_view/profile_page.dart';
+import 'package:dele/page_view/setting_view.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 
@@ -11,12 +14,12 @@ class Bnb extends StatefulWidget {
 }
 
 class _BnbState extends State<Bnb> {
-  int selectedindex = 0;
+  int selectedindex = 1;
 
   List<Widget> Bottompages = [
-    BasketPage(),
+    Profile_Page(),
     HomePage(),
-
+    BasketPage(),
   ];
 
   @override
@@ -24,7 +27,8 @@ class _BnbState extends State<Bnb> {
     // const controller=Bnb();
     return Scaffold(
       extendBody: true,
-      appBar: AppBar(
+
+      appBar:AppBar(
 
         actions: [Image.asset('Images/Categories/Wasili.logo.png',
           height: 140,
@@ -40,26 +44,29 @@ class _BnbState extends State<Bnb> {
               Icon(Icons.location_on_outlined,
               size: 40,
               color: Theme.of(context).primaryColor,),
-              
+
               SizedBox(width: 5,),
-              
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                 Text('Al-Kadhimiya'),
                 SizedBox(height: 5,),
                 Text('Al-Nuab,Street')
-              ],)
-          
+              ],),
+
             ],
           ),
           onTap: (){},
         ),
+        // bottom: PreferredSize(preferredSize: Size(200, 100), child: HomeSearch()),
+
         leadingWidth: MediaQuery.of(context).size.width/1.6,
         elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
         scrolledUnderElevation: 0,
+         toolbarHeight: 50,
 
       ),
 
@@ -81,17 +88,17 @@ class _BnbState extends State<Bnb> {
         items: [
           CustomNavigationBarItem(
             icon: const Icon(Icons.account_circle),
-            title: const Text("Me"),
+            title: const Text("الحساب"),
           ),
 
           CustomNavigationBarItem(
             icon: const Icon(Icons.home_outlined,),
-            title: const Text("Home"),
+            title: const Text("الرئيسيه"),
           ),
 
           CustomNavigationBarItem(
             icon: const Icon(Icons.shopping_cart_outlined),
-            title: const Text("Cart"),
+            title: const Text("السله"),
           ),
 
 

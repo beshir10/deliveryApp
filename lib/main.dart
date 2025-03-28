@@ -1,5 +1,6 @@
 import 'package:dele/bnb.dart';
 import 'package:dele/page_view/basket_page.dart';
+import 'package:dele/page_view/splash_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         dialogBackgroundColor: Colors.white,
         textTheme: TextTheme(titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
       ),
-      home: Bnb(),
+      home: Splash_Screen_view(),
     );
   }
 }
